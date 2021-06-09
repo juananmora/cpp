@@ -1,4 +1,4 @@
-FROM conanio/gcc8-jnlp-slave:latest
+FROM conanio/gcc8:latest
 
 #RUN apk --no-cache add make gcc g++ musl-dev binutils autoconf automake libtool pkgconfig check-dev file patch
 
