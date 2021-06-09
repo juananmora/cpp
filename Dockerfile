@@ -4,6 +4,8 @@ RUN apk --no-cache add make gcc g++ musl-dev binutils autoconf automake libtool 
 
 COPY . /usr
 
+WORKDIR /usr
+
 RUN g++ hello.cpp -o hello
 # TODO would be better to not run the app as root...
 
