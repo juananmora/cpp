@@ -1,5 +1,5 @@
 FROM alpine:latest
-COPY hello /home/conan
-WORKDIR /home/conan
+COPY hello /usr/src/myapp
+WORKDIR /usr/src/myapp
 
 CMD ["./hello"]
