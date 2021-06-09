@@ -9,4 +9,4 @@ WORKDIR /usr
 RUN g++ hello.cpp -o hello
 # TODO would be better to not run the app as root...
 
-# CMD ["/usr","./hello"]
+CMD ["./hello"]
