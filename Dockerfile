@@ -7,7 +7,7 @@ COPY . /usr
 
 WORKDIR /usr
 
-#RUN g++ hello.cpp -o hello
+RUN g++ hello.cpp -o hello
 # TODO would be better to not run the app as root...
 
 CMD ["./hello"]
