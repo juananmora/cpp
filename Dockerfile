@@ -1,5 +1,5 @@
 FROM alpine:latest
-COPY . /usr/share/jenkins/workspace/myapp
-WORKDIR /usr/share/jenkins/workspace/myapp
+COPY . /home/conan/myapp
+WORKDIR /home/conan/myapp
 
 CMD ["./hello"]
