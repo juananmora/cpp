@@ -1,4 +1,4 @@
 FROM alpine:latest
-COPY hello /usr/src
+COPY . /usr/src
 
-CMD ["./usr/src/hello"]
+CMD ["./usr/src", "hello"]
