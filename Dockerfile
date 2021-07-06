@@ -1,5 +1,5 @@
   
-FROM conanio/gcc8:latest
+FROM scratch
 
 #RUN apk --no-cache add make gcc g++ musl-dev binutils autoconf automake libtool pkgconfig check-dev file patch
 
