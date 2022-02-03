@@ -1,14 +1,18 @@
 apiVersion: v1
 kind: Pod
 metadata:
+  labels:
+    app.kubernetes.io/instance: gcc
   name: gcc
+  namespace: gcc
 spec:
   containers:
-  - name: gcc
-    image: juananmora/gcc:latest
-    # Just spin & wait forever
-    command: [ "/hello" ]
-    args: [ "while true; do sleep 30; done;" ]
+    - args:
+        - while true; do sleep 30; done;
+      command:
+        - /hello
+      image: 'juananmora/gcc:latest'
+      name: gcc
 
 
 
