@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-compiler-c
+  name: gcc
   namespace: default
 spec:
   replicas: 1
@@ -14,7 +14,7 @@ spec:
         compiler: c
     spec:
       containers:
-      - name: compiler-base-c
+      - name: gcc
         image: juananmora/gcc:latest
         resources:
           requests:
