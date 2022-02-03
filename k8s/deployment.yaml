@@ -9,8 +9,6 @@ spec:
   containers:
     - args:
         - while true; do sleep 30; done;
-      command:
-        - /hello
       image: 'juananmora/gcc:latest'
       name: gcc
 
