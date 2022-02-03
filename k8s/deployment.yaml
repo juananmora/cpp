@@ -16,7 +16,12 @@ spec:
       containers:
       - name: gcc
         image: juananmora/gcc:latest
-        resources:
+        command:
+         - /bin/sh
+         - "-c"
+         - "sleep 60m"
+       restartPolicy: Never
+       resources:
           requests:
             memory: "512Mi"
             cpu: "100m"
