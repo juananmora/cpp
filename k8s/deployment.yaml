@@ -15,8 +15,7 @@ spec:
   containers:
   - image: juananmora/gcc:latest
     command:
-      - /bin/sh
-      - "-c"
+      - /hello
       - "sleep 60m"
     imagePullPolicy: Always
     restartPolicy: Never
