@@ -7,7 +7,7 @@ spec:
   - name: gcc
     image: juananmora/gcc:latest
     # Just spin & wait forever
-    command: [ "/bin/bash", "-c", "--" ]
+    command: [ "/hello" ]
     args: [ "while true; do sleep 30; done;" ]
 
 
