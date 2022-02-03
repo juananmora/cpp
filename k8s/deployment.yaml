@@ -8,9 +8,11 @@ metadata:
 spec:
   containers:
     - args:
-        - sleep 300
+        - hello
       image: 'juananmora/gcc:latest'
       name: gcc
+      imagePullPolicy: Always
+      restartPolicy: Never
 
 
 
