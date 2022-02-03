@@ -3,16 +3,10 @@ kind: Deployment
 metadata:
   name: gcc
 spec:
-  selector:
-    matchLabels:
-      octopusexport: OctopusExport
   replicas: 1
   strategy:
     type: RollingUpdate
   template:
-    metadata:
-      labels:
-        octopusexport: OctopusExport
     spec:
       containers:
         - name: gcc
