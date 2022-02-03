@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - args:
-        - while true; do sleep 30; done;
+        - sleep 300
       image: 'juananmora/gcc:latest'
       name: gcc
 
