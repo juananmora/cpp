@@ -3,12 +3,30 @@ kind: Deployment
 metadata:
   name: gcc
 spec:
+  selector:
+    matchLabels:
+      octopusexport: OctopusExport
   replicas: 1
   strategy:
     type: RollingUpdate
   template:
+    metadata:
+      labels:
+        octopusexport: OctopusExport
     spec:
       containers:
         - name: gcc
           image: 'juananmora/gcc:latest'
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - web
+                topologyKey: kubernetes.io/hostname
       
