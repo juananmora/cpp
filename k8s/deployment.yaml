@@ -1,13 +1,30 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: gcc
-  labels:
-    app: gcc
+  name: test-compiler-c
+  namespace: default
 spec:
-  containers:
-    - name: gcc
-      image: juananmora/gcc:latest
+  replicas: 1
+  selector:
+    matchLabels:
+      compiler: c
+  template:
+    metadata:
+      labels:
+        compiler: c
+    spec:
+      containers:
+      - name: compiler-base-c
+        image: juananmora/gcc:latest
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "100m"
+          limits:
+            memory: "1024Mi"
+            cpu: "1000m"
+
+
 
 
 
