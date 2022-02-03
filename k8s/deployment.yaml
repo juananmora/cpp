@@ -15,5 +15,5 @@ spec:
         app: gcc
     spec:
       containers:
-      - name: nginx
+      - name: gcc
         image: juananmora/gcc:latest
