@@ -1,18 +1,14 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  labels:
-    app.kubernetes.io/instance: gcc
   name: gcc
-  namespace: gcc
+  labels:
+    role: myrole
 spec:
   containers:
-    - args:
-        - hello
-      image: 'juananmora/gcc:latest'
-      name: gcc
-      imagePullPolicy: Always
-      restartPolicy: Never
+    - name: gcc
+      image: juananmora/gcc:latest
+
 
 
 
