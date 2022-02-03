@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gcc
+  labels:
+    app: gcc
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gcc
+  template:
+    metadata:
+      labels:
+        app: gcc
+    spec:
+      containers:
+      - name: nginx
+        image: juananmora/gcc:latest
