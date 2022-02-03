@@ -2,18 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: gcc
-  labels:
-    app: gcc
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      app: gcc
+      octopusexport: OctopusExport
+  replicas: 1
+  strategy:
+    type: RollingUpdate
   template:
     metadata:
       labels:
-        app: gcc
+        octopusexport: OctopusExport
     spec:
       containers:
-      - name: gcc
-        image: juananmora/gcc:latest
+        - name: gcc
+          image: 'juananmora/gcc:latest'
+      
