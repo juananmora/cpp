@@ -12,7 +12,6 @@ spec:
     metadata:
       labels:
         compiler: c
-spec:
   containers:
   - image: juananmora/gcc:latest
     command:
