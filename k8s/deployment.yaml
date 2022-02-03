@@ -1,25 +1,14 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
   name: gcc
-  namespace: default
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      compiler: c
-  template:
-    metadata:
-      labels:
-        compiler: c
   containers:
-  - image: juananmora/gcc:latest
-    command:
-      - /hello
-      - "sleep 60m"
-    imagePullPolicy: Always
-    restartPolicy: Never
-    name: gcc
+  - name: gcc
+    image: juananmora/gcc:latest
+    # Just spin & wait forever
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
 
 
 
