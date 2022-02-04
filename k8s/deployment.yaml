@@ -17,6 +17,8 @@ spec:
       containers:
       - name: gcc
         image: juananmora/gcc:59
+        command: [ "sleep" ]
+        args: [ "infinity" ]
 
 
 
