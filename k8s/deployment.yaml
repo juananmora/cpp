@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: gcc
-        image: juananmora/gcc:57
+        image: juananmora/gcc:59
 
 
 
