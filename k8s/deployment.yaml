@@ -1,13 +1,23 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: gcc
   labels:
-    role: myrole
+    app: gcc
 spec:
-  containers:
-    - name: gcc
-      image: juananmora/gcc:latest
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gcc
+  template:
+    metadata:
+      labels:
+        app: gcc
+    spec:
+      containers:
+      - name: gcc
+        image: juananmora/gcc:56
+
 
 
 
