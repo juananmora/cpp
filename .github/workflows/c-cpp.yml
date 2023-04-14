@@ -1,0 +1,21 @@
+name: Mend CLI Scan
+
+on:
+  workflow_dispatch
+
+jobs:
+  mend-cli:
+    name: Mend-CLI
+    env:
+      MEND_EMAIL: juan.a.mora@accenture.com
+      MEND_USER_KEY: a26cab57-a553-45b7-a1a7-417acc9ff228
+      MEND_URL: https://saas-eu.mend.io/
+    runs-on: ubuntu-latest
+    steps:
+      # Downloading Mend CLI
+      - name: Mend CLI
+        run: | 
+          echo Downloading Mend CLI
+          curl https://downloads.mend.io/production/unified/latest/linux_amd64/mend -o /usr/local/bin/mend && chmod +x /usr/local/bin/mend
+          echo Start Mend Container scan
+          mend image juananmora/jpetk8s:21
